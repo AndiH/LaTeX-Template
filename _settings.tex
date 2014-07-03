@@ -73,34 +73,6 @@
 }
 
 
-% chapter definition
-\newif\ifchapternonum
-\makechapterstyle{jenor}{
-  \renewcommand\printchaptername{}
-  \renewcommand\printchapternum{}
-  \renewcommand\printchapternonum{\chapternonumtrue}
-  \renewcommand\chaptitlefont{\fontseries{bx}%
-    \fontshape{n}\fontsize{25}{35}\selectfont\raggedleft}
-  \renewcommand\chapnumfont{\fontseries{m}\fontshape{n}%
-    \fontsize{3cm}{0in}\selectfont\color{gray75}}
-  \renewcommand\printchaptertitle[1]{%
-    \noindent%
-    \ifchapternonum%
-    \begin{tabularx}{\textwidth}{X}%
-      {\parbox[b]{\linewidth}{\chaptitlefont ##1}%
-      \vphantom{\raisebox{-15pt}{\chapnumfont 1}}}
-    \end{tabularx}%
-    \else
-    \begin{tabularx}{\textwidth}{Xl}
-      {\parbox[b]{\linewidth}{\chaptitlefont ##1}}
-      & \raisebox{-15pt}{\chapnumfont\ \thechapter}%
-    \end{tabularx}%
-    \fi
-    \par\vskip2mm\hrule
-  }
-}
-\chapterstyle{jenor}
-
 
 % other title definitions
 % change the following to switch to sans serif title styles
